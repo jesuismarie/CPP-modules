@@ -9,9 +9,10 @@ RM				= rm -rf
 CPPFLAGS		= -Wall -Wextra -Werror -std=c++98
 
 YELLOW			= \033[38;2;255;239;0m
+RESET			= \033[0m
 
 $(BUILD)/%.o:	%.cpp $(HEADER) Makefile
-			@$(CC) $(CPPFLAGS) -c $< -o $@
+			$(CC) $(CPPFLAGS) -c $< -o $@
 
 all:		$(BUILD) $(NAME)
 

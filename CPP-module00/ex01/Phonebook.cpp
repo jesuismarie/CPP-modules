@@ -8,7 +8,7 @@ Phonebook::Phonebook()
 
 Phonebook::~Phonebook()
 {
-	std::cout << "Warrning: Your contacts are lost forever." << std::endl;
+	std::cout << "\e[0;31mWarrning: Your contacts are lost forever.\e[0m" << std::endl;
 }
 
 void	Phonebook::add_contact(void)
@@ -18,7 +18,7 @@ void	Phonebook::add_contact(void)
 	str = "";
 	if (this->idx > 7)
 	{
-		std::cout << "Warrning: Too many contacts: Overwriting the contact information!" << std::endl;
+		std::cout << "\e[0;31mWarrning: Too many contacts: Overwriting the contact information!\e[0m" << std::endl;
 		this->idx = 0;
 	}
 	while (!std::cin.eof() && str == "")
@@ -72,7 +72,7 @@ void	Phonebook::search_contact(void)
 	{
 		std::cout << "Select an index: ";
 		if (std::getline(std::cin, str) && str != "")
-			if (str.size() == 1 && str[0] >= '1' && str[0] <= '8')
+		if (str.size() == 1 && str[0] >= '1' && str[0] <= '8')
 				break ;
 		if (str != "")
 			std::cout << "Invalid index." << std::endl;
@@ -95,24 +95,24 @@ int	Phonebook::print_list(Contact contacts[8])
 	int	i;
 	std::string	str;
 
-	std::cout << "---------------------------------------------" << std::endl;
-	std::cout << "|     Index|First Name| Last Name|  Nickname|" << std::endl;
-	std::cout << "|----------|----------|----------|----------|" << std::endl;
+	std::cout << "\e[0;32m---------------------------------------------\e[0m" << std::endl;
+	std::cout << "\e[0;32m|     Index|First Name| Last Name|  Nickname|\e[0m" << std::endl;
+	std::cout << "\e[0;32m|----------|----------|----------|----------|\e[0m" << std::endl;
 	i = -1;
 	while (++i < 8 && contacts[i].get_fname().size())
 	{
 		str = i + 1 + '0';
 		str = this->format_str(str, 10);
-		std::cout << "|" << str;
+		std::cout << "\e[0;32m|\e[0m" << str;
 		str = this->format_str(contacts[i].get_fname(), 10);
-		std::cout << "|" << str;
+		std::cout << "\e[0;32m|\e[0m" << str;
 		str = this->format_str(contacts[i].get_lname(), 10);
-		std::cout << "|" << str;
+		std::cout << "\e[0;32m|\e[0m" << str;
 		str = this->format_str(contacts[i].get_nick(), 10);
-		std::cout << "|" << str;
-		std::cout << "|" << std::endl;
+		std::cout << "\e[0;32m|\e[0m" << str;
+		std::cout << "\e[0;32m|\e[0m" << std::endl;
 	}
-	std::cout << "---------------------------------------------" << std::endl;
+	std::cout << "\e[0;32m---------------------------------------------\e[0m" << std::endl;
 	return (i);
 }
 
