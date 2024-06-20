@@ -19,7 +19,7 @@ int	main(void)
 			ph_b.search_contact();
 		else if (line == "EXIT")
 			return (0);
-		else if (!std::cin.eof())
+		else if (!std::cin.eof() && line != "")
 			std::cout << "\e[0;31mError: Command not found\e[0m" << std::endl;
 		if (std::cin.eof())
 		{

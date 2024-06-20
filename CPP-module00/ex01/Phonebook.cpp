@@ -1,3 +1,4 @@
+#include <iomanip>
 #include "Phonebook.hpp"
 
 Phonebook::Phonebook()
@@ -72,8 +73,17 @@ void	Phonebook::search_contact(void)
 	{
 		std::cout << "Select an index: ";
 		if (std::getline(std::cin, str) && str != "")
-		if (str.size() == 1 && str[0] >= '1' && str[0] <= '8')
+		{
+			if (str.size() == 1 && str[0] >= '1' && str[0] <= '8')
+			{
+				if (this->contacts[str[0] - 1 -'0'].get_fname().size() == 0)
+				{
+					std::cout << "\e[0;31mThere is no contact with this index\e[0m" << std::endl;
+					continue ;
+				}
 				break ;
+			}
+		}
 		if (str != "")
 			std::cout << "Invalid index." << std::endl;
 	}
@@ -103,13 +113,13 @@ int	Phonebook::print_list(Contact contacts[8])
 	{
 		str = i + 1 + '0';
 		str = this->format_str(str, 10);
-		std::cout << "\e[0;32m|\e[0m" << str;
+		std::cout << "\e[0;32m|\e[0m" << std::setw(10) << str;
 		str = this->format_str(contacts[i].get_fname(), 10);
-		std::cout << "\e[0;32m|\e[0m" << str;
+		std::cout << "\e[0;32m|\e[0m" << std::setw(10) << str;
 		str = this->format_str(contacts[i].get_lname(), 10);
-		std::cout << "\e[0;32m|\e[0m" << str;
+		std::cout << "\e[0;32m|\e[0m" << std::setw(10) << str;
 		str = this->format_str(contacts[i].get_nick(), 10);
-		std::cout << "\e[0;32m|\e[0m" << str;
+		std::cout << "\e[0;32m|\e[0m" << std::setw(10) << str;
 		std::cout << "\e[0;32m|\e[0m" << std::endl;
 	}
 	std::cout << "\e[0;32m---------------------------------------------\e[0m" << std::endl;
@@ -118,15 +128,10 @@ int	Phonebook::print_list(Contact contacts[8])
 
 std::string	Phonebook::format_str(std::string str, unsigned long max)
 {
-	unsigned long	i;
-
-	if (str.size() > max)
+	if (str.size() > max - 1)
 	{
 		str.resize(max);
 		str[max - 1] = '.';
 	}
-	i = max - str.size();
-	while (i--)
-		str.insert(str.begin(), ' ');
 	return (str);
 }
