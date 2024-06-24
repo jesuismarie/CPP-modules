@@ -15,11 +15,11 @@ private:
 public:
 	Contact();
 	~Contact();
-	std::string	get_fname();
-	std::string	get_lname();
-	std::string	get_nick();
-	std::string	get_phone_num();
-	std::string	get_secret();
+	std::string	get_fname() const;
+	std::string	get_lname() const;
+	std::string	get_nick() const;
+	std::string	get_phone_num() const;
+	std::string	get_secret() const;
 	void		set_fname(std::string str);
 	void		set_lname(std::string str);
 	void		set_nick(std::string str);
