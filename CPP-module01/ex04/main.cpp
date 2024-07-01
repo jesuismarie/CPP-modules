@@ -19,10 +19,10 @@ void	replace_str(char **argv, std::string str)
 	for (int i = 0; i < (int)str.size(); i++)
 	{
 		pos = str.find(argv[2], i);
-		if (pos != (int)std::string::npos && pos == i)
+		if (pos != (int)std::string::npos && pos == i && std::string(argv[2]) != "")
 		{
 			outfile << argv[3];
-			i += std::string(argv[3]).size() - 1;
+			i += std::string(argv[2]).size() - 1;
 		}
 		else
 			outfile << str[i];
