@@ -12,27 +12,27 @@ Contact::~Contact()
 
 /*********************************** GETTERS ***********************************/
 
-std::string	Contact::get_fname(void) const
+const std::string	&Contact::get_fname(void) const
 {
 	return (this->fname);
 }
 
-std::string	Contact::get_lname(void) const
+const std::string	&Contact::get_lname(void) const
 {
 	return (this->lname);
 }
 
-std::string	Contact::get_nick(void) const
+const std::string	&Contact::get_nick(void) const
 {
 	return (this->nick);
 }
 
-std::string	Contact::get_phone_num(void) const
+const std::string	&Contact::get_phone_num(void) const
 {
 	return (this->phone_num);
 }
 
-std::string	Contact::get_secret(void) const
+const std::string	&Contact::get_secret(void) const
 {
 	return (this->secret);
 }
