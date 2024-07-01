@@ -23,7 +23,7 @@ void	Zombie::announce(void)
 
 /*********************************** GETTERS ***********************************/
 
-std::string	Zombie::get_name(void) const
+const std::string	&Zombie::get_name(void) const
 {
 	return (this->name);
 }
