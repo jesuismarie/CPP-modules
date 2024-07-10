@@ -13,7 +13,7 @@ Fixed::Fixed(Fixed const &copy)
 	*this = copy;
 }
 
-Fixed::~Fixed()
+Fixed::~Fixed(void)
 {
 	std::cout << "Destructor called" << std::endl;
 }

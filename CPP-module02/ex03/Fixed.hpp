@@ -14,7 +14,7 @@ public:
 	Fixed(const int &value);
 	Fixed(const float &value);
 	Fixed(Fixed const &copy);
-	~Fixed();
+	~Fixed(void);
 	
 	int		getRawBits(void) const;
 	void	setRawBits(int const raw);
@@ -34,9 +34,9 @@ public:
 	bool	operator!=(Fixed const &other_num) const;
 	bool	operator==(Fixed const &other_num) const;
 	/*------------------ Increment/Decrement operators -----------------*/
-	Fixed	&operator++();
+	Fixed	&operator++(void);
 	Fixed	operator++(int);
-	Fixed	&operator--();
+	Fixed	&operator--(void);
 	Fixed	operator--(int);
 	/*--------------------- Static member functions --------------------*/
 	static Fixed		min(Fixed &a, Fixed &b);

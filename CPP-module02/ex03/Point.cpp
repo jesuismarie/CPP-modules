@@ -1,6 +1,6 @@
 #include "Point.hpp"
 
-Point::Point()
+Point::Point(void)
 {
 }
 
@@ -9,7 +9,7 @@ Point::Point(const float &x, const float &y): _x(x), _y(y)
 }
 
 
-Point::~Point()
+Point::~Point(void)
 {
 }
 

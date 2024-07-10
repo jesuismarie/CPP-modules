@@ -6,11 +6,11 @@ Fixed::Fixed(void): _num(0)
 {
 }
 
-Fixed::Fixed(const int &value): _num(value << _fract)
+Fixed::Fixed(const int &value): _num(value << this->_fract)
 {
 }
 
-Fixed::Fixed(const float &value): _num(roundf(value * (1 << _fract)))
+Fixed::Fixed(const float &value): _num(roundf(value * (1 << this->_fract)))
 {
 }
 
@@ -26,7 +26,7 @@ Fixed &Fixed::operator=(Fixed const &copy)
 	return (*this);
 }
 
-Fixed::~Fixed()
+Fixed::~Fixed(void)
 {
 }
 
@@ -42,7 +42,7 @@ void	Fixed::setRawBits(int const raw)
 
 float	Fixed::toFloat(void) const
 {
-	return ((float)this->_num / (1 << _fract));
+	return ((float)this->_num / (1 << this->_fract));
 }
 
 int	Fixed::toInt(void) const
@@ -100,7 +100,7 @@ bool	Fixed::operator==(Fixed const &other_num) const
 	return (this->_num == other_num._num);
 }
 
-Fixed	&Fixed::operator++()
+Fixed	&Fixed::operator++(void)
 {
 	this->_num++;
 	return (*this);
@@ -114,7 +114,7 @@ Fixed	Fixed::operator++(int)
 	return (tmp);
 }
 
-Fixed	&Fixed::operator--()
+Fixed	&Fixed::operator--(void)
 {
 	this->_num--;
 	return (*this);
