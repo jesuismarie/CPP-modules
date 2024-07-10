@@ -1,13 +1,13 @@
 #include <iomanip>
 #include "Phonebook.hpp"
 
-Phonebook::Phonebook()
+Phonebook::Phonebook(void)
 {
 	this->idx = 0;
 	std::cout << std::endl << "Hi 👋, Welcome to PhoneBook" << std::endl << std::endl;
 }
 
-Phonebook::~Phonebook()
+Phonebook::~Phonebook(void)
 {
 	std::cout << "\e[0;31mWarrning: Your contacts are lost forever.\e[0m" << std::endl;
 }

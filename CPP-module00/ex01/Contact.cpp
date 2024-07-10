@@ -2,11 +2,11 @@
 
 /******************************** CONSTRUCTORS ********************************/
 
-Contact::Contact()
+Contact::Contact(void)
 {
 }
 
-Contact::~Contact()
+Contact::~Contact(void)
 {
 }
 

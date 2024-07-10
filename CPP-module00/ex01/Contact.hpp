@@ -13,13 +13,13 @@ private:
 	std::string	phone_num;
 	std::string	secret;
 public:
-	Contact();
-	~Contact();
-	const std::string	&get_fname() const;
-	const std::string	&get_lname() const;
-	const std::string	&get_nick() const;
-	const std::string	&get_phone_num() const;
-	const std::string	&get_secret() const;
+	Contact(void);
+	~Contact(void);
+	const std::string	&get_fname(void) const;
+	const std::string	&get_lname(void) const;
+	const std::string	&get_nick(void) const;
+	const std::string	&get_phone_num(void) const;
+	const std::string	&get_secret(void) const;
 	void				set_fname(std::string str);
 	void				set_lname(std::string str);
 	void				set_nick(std::string str);
