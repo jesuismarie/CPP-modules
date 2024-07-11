@@ -6,7 +6,7 @@ OBJ				= $(SRC:%.cpp=$(BUILD)/%.o)
 HEADER			= Weapon.hpp HumanA.hpp HumanB.hpp
 CC				= c++
 RM				= rm -rf
-CPPFLAGS		= -Wall -Wextra -Werror -std=c++98 -g3 -fsanitize=address
+CPPFLAGS		= -Wall -Wextra -Werror -std=c++98
 
 YELLOW			= \033[38;2;255;239;0m
 RESET			= \033[0m

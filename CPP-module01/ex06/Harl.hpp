@@ -16,8 +16,8 @@ private:
 	void	warning(void);
 	void	error(void);
 public:
-	Harl();
-	~Harl();
+	Harl(void);
+	~Harl(void);
 	void	complain(std::string level);
 };
 

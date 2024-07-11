@@ -4,7 +4,7 @@ HumanA::HumanA(std::string name, Weapon &type): name(name), weapon(type)
 {
 }
 
-HumanA::~HumanA()
+HumanA::~HumanA(void)
 {
 }
 

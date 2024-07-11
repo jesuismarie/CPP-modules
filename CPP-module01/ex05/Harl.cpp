@@ -1,11 +1,11 @@
 #include "Harl.hpp"
 
-Harl::Harl()
+Harl::Harl(void)
 {
 	std::cout << YELLOW << "Harl created" << RESET << std::endl;
 }
 
-Harl::~Harl()
+Harl::~Harl(void)
 {
 	std::cout << YELLOW << "Harl destroyed" << RESET << std::endl;
 }

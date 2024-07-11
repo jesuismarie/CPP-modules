@@ -4,7 +4,7 @@ HumanB::HumanB(std::string name): name(name), weapon(NULL)
 {
 }
 
-HumanB::~HumanB()
+HumanB::~HumanB(void)
 {
 }
 
