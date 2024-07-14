@@ -2,9 +2,9 @@
 
 float	area(const Point &a, const Point &b, const Point &c)
 {
-	return std::abs((a.getX().toFloat() * (b.getY().toFloat() - c.getY().toFloat()) + \
+	return (std::abs((a.getX().toFloat() * (b.getY().toFloat() - c.getY().toFloat()) + \
 		b.getX().toFloat() * (c.getY().toFloat() - a.getY().toFloat()) + \
-		c.getX().toFloat() * (a.getY().toFloat() - b.getY().toFloat())) / 2.0);
+		c.getX().toFloat() * (a.getY().toFloat() - b.getY().toFloat())) / 2.0));
 }
 
 bool	bsp(const Point &a, const Point &b, const Point &c, const Point &point)

@@ -18,7 +18,7 @@ Fixed::~Fixed(void)
 	std::cout << "Destructor called" << std::endl;
 }
 
-Fixed &Fixed::operator=(Fixed const &copy)
+Fixed	&Fixed::operator=(Fixed const &copy)
 {
 	std::cout << "Copy assignment operator called" << std::endl;
 	if (this != &copy)

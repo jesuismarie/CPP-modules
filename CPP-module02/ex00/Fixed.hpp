@@ -5,16 +5,16 @@
 
 class Fixed
 {
-private:
-	int					_num;
-	static const int	_fract;
-public:
-	Fixed(void);
-	Fixed(Fixed const &copy);
-	~Fixed(void);
-	Fixed	&operator=(Fixed const &copy);
-	int		getRawBits(void) const;
-	void	setRawBits(int const raw);
+	private:
+		int					_num;
+		static const int	_fract;
+	public:
+		Fixed(void);
+		Fixed(Fixed const &copy);
+		~Fixed(void);
+		Fixed	&operator=(Fixed const &copy);
+		int		getRawBits(void) const;
+		void	setRawBits(int const raw);
 };
 
 #endif

@@ -19,7 +19,7 @@ Fixed::Fixed(Fixed const &copy)
 	*this = copy;
 }
 
-Fixed &Fixed::operator=(Fixed const &copy)
+Fixed	&Fixed::operator=(Fixed const &copy)
 {
 	if (this != &copy)
 		this->_num = copy.getRawBits();
@@ -100,7 +100,7 @@ bool	Fixed::operator==(Fixed const &other_num) const
 	return (this->_num == other_num._num);
 }
 
-Fixed	&Fixed::operator++(void)
+Fixed	Fixed::operator++(void)
 {
 	this->_num++;
 	return (*this);
@@ -108,13 +108,13 @@ Fixed	&Fixed::operator++(void)
 
 Fixed	Fixed::operator++(int)
 {
-	Fixed	tmp(this->_num);
+	Fixed	tmp(*this);
 
 	++(this->_num);
 	return (tmp);
 }
 
-Fixed	&Fixed::operator--(void)
+Fixed	Fixed::operator--(void)
 {
 	this->_num--;
 	return (*this);
@@ -122,7 +122,7 @@ Fixed	&Fixed::operator--(void)
 
 Fixed	Fixed::operator--(int)
 {
-	Fixed	tmp(this->_num);
+	Fixed	tmp(*this);
 
 	--(this->_num);
 	return (tmp);
