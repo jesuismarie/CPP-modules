@@ -49,6 +49,11 @@ void	ClapTrap::attack(const std::string& target)
 
 void	ClapTrap::takeDamage(unsigned int amount)
 {
+	if (static_cast<int>(amount) < 0)
+	{
+		std::cout << "Wrong amount" << std::endl;
+		return ;
+	}
 	if (this->_hitPoint > 0)
 	{
 		std::cout << "ClapTrap " << this->_name << " took " << amount << " points of damage!" << std::endl;
@@ -62,6 +67,11 @@ void	ClapTrap::takeDamage(unsigned int amount)
 
 void	ClapTrap::beRepaired(unsigned int amount)
 {
+	if (static_cast<int>(amount) < 0)
+	{
+		std::cout << "Wrong amount" << std::endl;
+		return ;
+	}
 	if (this->_hitPoint > 0 && this->_energy)
 	{
 		std::cout << "ClapTrap " << this->_name << " has been repaired " << amount << " points of damage!" << std::endl;
