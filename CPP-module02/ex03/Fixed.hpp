@@ -39,10 +39,10 @@ class Fixed
 		Fixed	operator--(void);
 		Fixed	operator--(int);
 		/*--------------------- Static member functions --------------------*/
-		static Fixed		min(Fixed &a, Fixed &b);
-		static const Fixed	min(Fixed const &a, Fixed const &b);
-		static Fixed		max(Fixed &a, Fixed &b);
-		static const Fixed	max(Fixed const &a, Fixed const &b);
+		static Fixed		&min(Fixed &a, Fixed &b);
+		static const Fixed	&min(Fixed const &a, Fixed const &b);
+		static Fixed		&max(Fixed &a, Fixed &b);
+		static const Fixed	&max(Fixed const &a, Fixed const &b);
 };
 
 std::ostream	&operator<<(std::ostream &os, const Fixed &fixed);
