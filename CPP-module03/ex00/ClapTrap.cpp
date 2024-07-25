@@ -17,8 +17,8 @@ ClapTrap::~ClapTrap(void)
 
 ClapTrap::ClapTrap(ClapTrap const &copy)
 {
-	std::cout << "ClapTrap " << this->_name << " copied." << std::endl;
 	*this = copy;
+	std::cout << "ClapTrap " << this->_name << " copied." << std::endl;
 }
 
 ClapTrap	&ClapTrap::operator=(ClapTrap const &copy)

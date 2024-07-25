@@ -22,7 +22,7 @@ ScavTrap::ScavTrap(ScavTrap const &copy): ClapTrap(copy)
 	std::cout << "ScavTrap " << this->_name << " copied." << std::endl;
 }
 
-ScavTrap::~ScavTrap()
+ScavTrap::~ScavTrap(void)
 {
 	std::cout << "ScavTrap " << this->_name << " destroyed." << std::endl;
 }
