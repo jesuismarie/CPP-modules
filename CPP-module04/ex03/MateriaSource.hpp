@@ -7,6 +7,7 @@ class MateriaSource : public IMateriaSource
 {
 	protected:
 		AMateria	*_inventory[4];
+		bool		inLearnInventory(AMateria *m);
 	public:
 		MateriaSource(void);
 		MateriaSource(MateriaSource const &copy);

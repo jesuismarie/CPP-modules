@@ -10,11 +10,12 @@ Character::Character(std::string const &name): _name(name), _inventory()
 	std::cout << "Character object " << this->_name << " created!" << std::endl;
 }
 
-Character::Character(Character const &copy): ICharacter(copy)
+Character::Character(Character const &copy)
 {
 	this->_name = copy._name;
 	for (int i = 0; i < 4; i++)
 	{
+		this->_inventory[i] = NULL;
 		if (copy._inventory[i])
 			this->_inventory[i] = copy._inventory[i]->clone();
 	}
@@ -58,9 +59,19 @@ std::string const	&Character::getName(void) const
 	return (this->_name);
 }
 
-void	Character::setName(std::string const &name)
+void	Character::setName(std::string name)
 {
 	this->_name = name;
+}
+
+bool		Character::inInventory(AMateria *m)
+{
+	for (int i = 0; i < 4; i++)
+	{
+		if (this->_inventory[i] == m)
+			return (1);
+	}
+	return (0);
 }
 
 void	Character::equip(AMateria *m)
@@ -74,7 +85,10 @@ void	Character::equip(AMateria *m)
 	{
 		if (!this->_inventory[i])
 		{
-			this->_inventory[i] = m;
+			if (this->inInventory(m))
+				this->_inventory[i] = m->clone();
+			else
+				this->_inventory[i] = m;
 			std::cout << "Materia " << m->getType() << " equipped to " << this->_name << "'s inventory at index " << i << std::endl;
 			return ;
 		}
@@ -88,15 +102,18 @@ void	Character::unequip(int idx)
 		std::cout << "Materia doesn't exist" << std::endl;
 	else
 	{
+		std::cout << "Unequipped " << this->_inventory[idx]->getType() << " from inventory" << std::endl;
 		this->_inventory[idx] = NULL;
-		std::cout << "Unequiped " << this->_inventory[idx]->getType() << "from inventory" << std::endl;
 	}
 }
 
 void	Character::use(int idx, ICharacter &target)
 {
 	if (idx < 0 || idx > 3 || !this->_inventory[idx])
-		std::cout << "Material doesn't exist" << std::endl;
+		std::cout << "Materia doesn't exist" << std::endl;
 	else
+	{
+		std::cout << "In index " << idx << " ";
 		this->_inventory[idx]->use(target);
+	}
 }

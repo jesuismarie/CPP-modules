@@ -17,15 +17,15 @@ WrongAnimal::~WrongAnimal(void)
 
 WrongAnimal::WrongAnimal(WrongAnimal const &copy)
 {
+	this->_type = copy._type;
 	std::cout << "WrongAnimal's copy constructor called with type " << this->_type << std::endl;
-	*this = copy;
 }
 
 WrongAnimal	&WrongAnimal::operator=(WrongAnimal const &copy)
 {
-	std::cout << "WrongAnimal's  copy assignment operator called with type " << this->_type << std::endl;
 	if (this != &copy)
-		*this = copy;
+		this->_type = copy._type;
+	std::cout << "WrongAnimal's copy assignment operator called with type " << this->_type << std::endl;
 	return (*this);
 }
 

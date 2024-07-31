@@ -11,8 +11,9 @@ class Dog : public Animal
 	public:
 		Dog(void);
 		Dog(Dog const &copy);
-		Dog	&operator=(Dog const &copy);
 		~Dog(void);
+		Dog		&operator=(Dog const &copy);
+		Brain	*getBrain(void) const;
 		void	makeSound(void) const;
 };
 

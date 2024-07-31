@@ -12,20 +12,21 @@ Brain::~Brain(void)
 
 Brain::Brain(Brain const &copy)
 {
-	std::cout << "Brain's copy constructor called with type " << std::endl;
-	*this = copy;
+	std::cout << "Brain's copy constructor called" << std::endl;
+	for (int i = 0; i < 100; ++i)
+		this->idea[i] = copy.idea[i];
 }
 
 Brain	&Brain::operator=(Brain const &copy)
 {
-	std::cout << "Brain's  copy assignment operator called with type " << std::endl;
+	std::cout << "Brain's copy assignment operator called" << std::endl;
 	if (this != &copy)
 		for (int i = 0; i < 100; ++i)
 			this->idea[i] = copy.idea[i];
 	return (*this);
 }
 
-std::string	Brain::getIdea(int index) const
+const std::string	&Brain::getIdea(int index) const
 {
 	return (*(this->idea + index));
 }

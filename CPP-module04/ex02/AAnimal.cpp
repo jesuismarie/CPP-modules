@@ -17,19 +17,19 @@ AAnimal::~AAnimal(void)
 
 AAnimal::AAnimal(AAnimal const &copy)
 {
+	this->_type = copy._type;
 	std::cout << "AAnimal's copy constructor called with type " << this->_type << std::endl;
-	*this = copy;
 }
 
 AAnimal	&AAnimal::operator=(AAnimal const &copy)
 {
-	std::cout << "AAnimal's  copy assignment operator called with type " << this->_type << std::endl;
 	if (this != &copy)
-		*this = copy;
+		this->_type = copy._type;
+	std::cout << "Animal's copy assignment operator called with type " << this->_type << std::endl;
 	return (*this);
 }
 
-const	std::string	&AAnimal::getType(void) const
+const std::string	&AAnimal::getType(void) const
 {
 	return (this->_type);
 } 

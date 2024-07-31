@@ -5,10 +5,10 @@
 
 int	main(void)
 {
-	const Animal* meta = new Animal();
-	const Animal* j = new Dog();
-	const Animal* i = new Cat();
-	const WrongAnimal* wrong = new WrongCat();
+	const Animal		*meta = new Animal();
+	const Animal		*j = new Dog();
+	const Animal		*i = new Cat();
+	const WrongAnimal	*wrong = new WrongCat();
 
 	std::cout << "Animal type: " << j->getType() << std::endl;
 	j->makeSound(); // will output the dog sound!

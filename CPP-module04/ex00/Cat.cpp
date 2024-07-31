@@ -18,7 +18,8 @@ Cat::Cat(Cat const &copy): Animal(copy)
 Cat	&Cat::operator=(Cat const &copy)
 {
 	std::cout << "Cat's assignment operator called" << std::endl;
-	Animal::operator=(copy);
+	if (this != &copy)
+		this->_type = copy._type;
 	return (*this);
 }
 

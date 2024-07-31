@@ -11,7 +11,7 @@ AMateria::AMateria(std::string const &type): _type(type)
 
 AMateria::AMateria(AMateria const &copy)
 {
-	*this = copy;
+	this->_type = copy._type;
 	std::cout << "AMatreia object copied!" << std::endl;
 }
 
@@ -33,7 +33,7 @@ std::string const	&AMateria::getType(void) const
 	return (this->_type);
 }
 
-void	AMateria::use(ICharacter& target)
+void	AMateria::use(ICharacter &target)
 {
 	std::cout << "* " << target.getName() << " has undefined materia *" << std::endl;
 }

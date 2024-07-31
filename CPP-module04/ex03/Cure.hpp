@@ -4,13 +4,15 @@
 # include "AMateria.hpp"
 # include "ICharacter.hpp"
 
+class ICharacter;
+
 class Cure : public AMateria
 {
 	public:
 		Cure(void);
 		Cure(Cure const &copy);
-		Cure	&operator=(Cure const &copy);
 		~Cure(void);
+		Cure		&operator=(Cure const &copy);
 		AMateria	*clone(void) const;
 		void		use(ICharacter& target);
 };

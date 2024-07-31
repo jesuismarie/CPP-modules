@@ -10,7 +10,7 @@ MateriaSource::MateriaSource(MateriaSource const &copy)
 	for (int i = 0; i < 4; i++)
 	{
 		if (copy._inventory[i])
-			this->_inventory[i] = copy._inventory[i]->clone();
+			this->_inventory[i] = copy._inventory[i];
 	}
 	std::cout << "MateriaSource object copied!" << std::endl;
 }
@@ -30,7 +30,7 @@ MateriaSource	&MateriaSource::operator=(MateriaSource const &copy)
 		for (int i = 0; i < 4; i++)
 		{
 			if (copy._inventory[i])
-				this->_inventory[i] = copy._inventory[i]->clone();
+				this->_inventory[i] = copy._inventory[i];
 		}
 	}
 	return (*this);
@@ -46,6 +46,16 @@ MateriaSource::~MateriaSource(void)
 	std::cout << "MateriaSource object destroyed!" << std::endl;
 }
 
+bool	MateriaSource::inLearnInventory(AMateria *m)
+{
+	for (int i = 0; i < 4; i++)
+	{
+		if (this->_inventory[i] == m)
+			return (1);
+	}
+	return (0);
+}
+
 void	MateriaSource::learnMateria(AMateria *m)
 {
 	if (!m)
@@ -57,7 +67,11 @@ void	MateriaSource::learnMateria(AMateria *m)
 	{
 		if (!this->_inventory[i])
 		{
-			this->_inventory[i] = m;
+			if (this->inLearnInventory(m))
+				this->_inventory[i] = m;
+			else
+				this->_inventory[i] = m;
+			std::cout << "Materia " << this->_inventory[i]->getType() << " learned at index " << i << std::endl;
 			return ;
 		}
 	}
@@ -68,10 +82,7 @@ AMateria	*MateriaSource::createMateria(std::string const &type)
 	for (int i = 0; i < 4; i++)
 	{
 		if (this->_inventory[i] && this->_inventory[i]->getType() == type)
-		{
-			std::cout << "aaaaaaaaaaaa" << std::endl;
 			return (this->_inventory[i]->clone());
-		}
 	}
 	std::cout << "Cannot create materia, " << type << " is invalid!" << std::endl;
 	return (NULL);
