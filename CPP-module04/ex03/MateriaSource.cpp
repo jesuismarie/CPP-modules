@@ -68,7 +68,7 @@ void	MateriaSource::learnMateria(AMateria *m)
 		if (!this->_inventory[i])
 		{
 			if (this->inLearnInventory(m))
-				this->_inventory[i] = m;
+				this->_inventory[i] = m->clone();
 			else
 				this->_inventory[i] = m;
 			std::cout << "Materia " << this->_inventory[i]->getType() << " learned at index " << i << std::endl;
