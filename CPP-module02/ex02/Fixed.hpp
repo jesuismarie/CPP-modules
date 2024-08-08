@@ -21,7 +21,7 @@ class Fixed
 		float	toFloat(void) const;
 		int		toInt(void) const;
 		/*---------------------- Arithmetic operators ----------------------*/
-		Fixed	&operator=(Fixed const &copy);
+		Fixed	&operator=(Fixed const &other);
 		Fixed	operator*(Fixed const &other_num) const;
 		Fixed	operator/(Fixed const &other_num) const;
 		Fixed	operator+(Fixed const &other_num) const;

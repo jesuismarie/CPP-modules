@@ -17,9 +17,9 @@ Point::Point(const Point &copy): _x(copy._x), _y(copy._y)
 {
 }
 
-Point	&Point::operator=(const Point &copy)
+Point	&Point::operator=(const Point &other)
 {
-	if (this != &copy)
+	if (this != &other)
 	{
 	}
 	return (*this);
