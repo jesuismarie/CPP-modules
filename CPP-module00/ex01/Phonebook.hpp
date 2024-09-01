@@ -10,7 +10,7 @@ class Phonebook
 		int		idx;
 	public:
 		Phonebook(void);
-		~Phonebook(void);
+		~Phonebook();
 		void		add_contact(void);
 		void		search_contact(void);
 		int			print_list(Contact contacts[8]);

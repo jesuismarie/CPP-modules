@@ -18,9 +18,7 @@
 
 class Account
 {
-
 	public:
-
 		typedef Account	t;
 
 		static int	getNbAccounts(void);
@@ -30,7 +28,7 @@ class Account
 		static void	displayAccountsInfos(void);
 
 		Account(int initial_deposit);
-		~Account(void);
+		~Account();
 
 		void	makeDeposit(int deposit);
 		bool	makeWithdrawal(int withdrawal);

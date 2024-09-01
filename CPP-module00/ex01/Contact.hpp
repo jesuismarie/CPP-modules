@@ -14,12 +14,12 @@ class Contact
 		std::string	secret;
 	public:
 		Contact(void);
-		~Contact(void);
-		const std::string	&get_fname(void) const;
-		const std::string	&get_lname(void) const;
-		const std::string	&get_nick(void) const;
-		const std::string	&get_phone_num(void) const;
-		const std::string	&get_secret(void) const;
+		~Contact();
+		const std::string&	get_fname(void) const;
+		const std::string&	get_lname(void) const;
+		const std::string&	get_nick(void) const;
+		const std::string&	get_phone_num(void) const;
+		const std::string&	get_secret(void) const;
 		void				set_fname(std::string str);
 		void				set_lname(std::string str);
 		void				set_nick(std::string str);

@@ -24,7 +24,7 @@ Account::Account(int initial_deposit)
 	this->_nbAccounts++;
 }
 
-Account::~Account(void)
+Account::~Account()
 {
 	Account::_displayTimestamp();
 	std::cout << " index:" << this->_accountIndex << ";amount:" << \
@@ -106,9 +106,13 @@ void	Account::displayStatus(void) const
 
 void	Account::_displayTimestamp(void)
 {
-	std::time_t	now;
+	time_t	now;
+	struct tm	*timeinfo;
+	char	buffer[20];
 
 	now = time(NULL);
-	std::cout << std::put_time(localtime(&now), "[%Y%m%d_%H%M%S]");
+	timeinfo = localtime(&now);
+	strftime(buffer, 20, "[%Y%m%d_%H%M%S]", timeinfo);
+	std::cout << buffer;
 	// std::cout << "[19920104_091532]";
 }

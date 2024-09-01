@@ -7,7 +7,7 @@ Phonebook::Phonebook(void)
 	std::cout << std::endl << "Hi 👋, Welcome to PhoneBook" << std::endl << std::endl;
 }
 
-Phonebook::~Phonebook(void)
+Phonebook::~Phonebook()
 {
 	std::cout << "\e[0;31mWarrning: Your contacts are lost forever.\e[0m" << std::endl;
 }

@@ -6,7 +6,7 @@ OBJ				= $(SRC:%.cpp=$(BUILD)/%.o)
 HEADER			= Account.hpp
 CC				= c++
 RM				= rm -rf
-CPPFLAGS		= -Wall -Wextra #-Werror -std=c++98
+CPPFLAGS		= -Wall -Wextra -Werror -std=c++98
 
 YELLOW			= \033[38;2;255;239;0m
 RESET			= \033[0m
