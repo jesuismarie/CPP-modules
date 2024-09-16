@@ -1,10 +1,10 @@
 #include "HumanA.hpp"
 
-HumanA::HumanA(std::string name, Weapon &type): name(name), weapon(type)
+HumanA::HumanA(std::string name, Weapon& type): name(name), weapon(type)
 {
 }
 
-HumanA::~HumanA(void)
+HumanA::~HumanA()
 {
 }
 

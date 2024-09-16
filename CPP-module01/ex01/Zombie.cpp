@@ -11,7 +11,7 @@ Zombie::Zombie(std::string name)
 	std::cout << "Zombie " << this->name << " created!" << std::endl;
 }
 
-Zombie::~Zombie(void)
+Zombie::~Zombie()
 {
 	std::cout << "Zombie " << this->name << " destroyed!" << std::endl;
 }
@@ -23,7 +23,7 @@ void	Zombie::announce(void)
 
 /*********************************** GETTERS ***********************************/
 
-const std::string	&Zombie::get_name(void) const
+const std::string&	Zombie::get_name(void) const
 {
 	return (this->name);
 }

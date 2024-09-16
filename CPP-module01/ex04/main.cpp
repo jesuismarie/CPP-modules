@@ -5,7 +5,7 @@
 #define GREEN "\033[0;32m"
 #define RESET "\033[0m"
 
-void	replace_str(char **argv, std::string str)
+void	replace_str(char** argv, std::string str)
 {
 	std::ofstream	outfile;
 	int				pos;
@@ -30,7 +30,7 @@ void	replace_str(char **argv, std::string str)
 	outfile.close();
 }
 
-int	main(int argc, char **argv)
+int	main(int argc, char** argv)
 {
 	std::ifstream	infile;
 	std::string		str;

@@ -5,7 +5,7 @@ Harl::Harl(void)
 	std::cout << YELLOW << "Harl created" << RESET << std::endl;
 }
 
-Harl::~Harl(void)
+Harl::~Harl()
 {
 	std::cout << YELLOW << "Harl destroyed" << RESET << std::endl;
 }

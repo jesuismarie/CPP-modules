@@ -4,7 +4,7 @@ Harl::Harl(void)
 {
 }
 
-Harl::~Harl(void)
+Harl::~Harl()
 {
 }
 
@@ -50,10 +50,13 @@ void	Harl::complain(std::string level)
 	{
 		case (0):
 			(this->*fptr[0])();
+			// Fall through
 		case (1):
 			(this->*fptr[1])();
+			// Fall through
 		case (2):
 			(this->*fptr[2])();
+			// Fall through
 		case (3):
 			(this->*fptr[3])();
 			break ;
