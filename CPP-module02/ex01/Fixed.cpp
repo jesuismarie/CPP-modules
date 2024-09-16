@@ -7,28 +7,28 @@ Fixed::Fixed(void): _num(0)
 	std::cout << "Default constructor called" << std::endl;
 }
 
-Fixed::Fixed(const int &value): _num(value << this->_fract)
+Fixed::Fixed(const int& value): _num(value << this->_fract)
 {
 	std::cout << "Int constructor called" << std::endl;
 }
 
-Fixed::Fixed(const float &value): _num(roundf(value * (1 << this->_fract)))
+Fixed::Fixed(const float& value): _num(roundf(value * (1 << this->_fract)))
 {
 	std::cout << "Float constructor called" << std::endl;
 }
 
-Fixed::Fixed(Fixed const &copy)
+Fixed::Fixed(const Fixed& copy)
 {
 	std::cout << "Copy constructor called" << std::endl;
 	*this = copy;
 }
 
-Fixed::~Fixed(void)
+Fixed::~Fixed()
 {
 	std::cout << "Destructor called" << std::endl;
 }
 
-Fixed	&Fixed::operator=(Fixed const &other)
+Fixed&	Fixed::operator=(const Fixed& other)
 {
 	std::cout << "Copy assignment operator called" << std::endl;
 	if (this != &other)
@@ -56,7 +56,7 @@ int	Fixed::toInt(void) const
 	return (this->_num >> this->_fract);
 }
 
-std::ostream	&operator<<(std::ostream &os, const Fixed &fixed)
+std::ostream&	operator<<(std::ostream& os, const Fixed& fixed)
 {
 	return (os << fixed.toFloat());
 }
