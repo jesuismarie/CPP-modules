@@ -106,9 +106,9 @@ void	Account::displayStatus(void) const
 
 void	Account::_displayTimestamp(void)
 {
-	time_t	now;
+	time_t		now;
 	struct tm	*timeinfo;
-	char	buffer[20];
+	char		buffer[20];
 
 	now = time(NULL);
 	timeinfo = localtime(&now);
