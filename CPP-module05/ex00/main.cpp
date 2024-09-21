@@ -9,7 +9,6 @@ int	main(void)
 
 		// Copy Constructor
 		Bureaucrat	b(a);
-
 		// ostream overload
 		std::cout << "a: " << a << std::endl;
 		std::cout << "b: " << b << std::endl;
@@ -23,7 +22,8 @@ int	main(void)
 			Bureaucrat	a("A", LOW_GRADE + 1);
 			std::cout << a << std::endl;
 		}
-		catch (std::exception& e) {
+		catch (std::exception& e)
+		{
 			std::cerr << e.what() << std::endl;
 		}
 		std::cout << std::endl;
@@ -34,7 +34,8 @@ int	main(void)
 			Bureaucrat	b("B", HIGH_GRADE - 1);
 			std::cout << b << std::endl;
 		}
-		catch (std::exception& e) {
+		catch (std::exception& e)
+		{
 			std::cerr << e.what() << std::endl;
 		}
 		std::cout << std::endl;
@@ -47,7 +48,8 @@ int	main(void)
 			c.incrementGrade();
 			std::cout << c << std::endl;
 		}
-		catch (std::exception& e) {
+		catch (std::exception& e)
+		{
 			std::cerr << e.what() << std::endl;
 		}
 		std::cout << std::endl;
@@ -60,7 +62,8 @@ int	main(void)
 			d.decrementGrade();
 			std::cout << d << std::endl;
 		}
-		catch (std::exception& e) {
+		catch (std::exception& e)
+		{
 			std::cerr << e.what() << std::endl;
 		}
 
@@ -77,10 +80,10 @@ int	main(void)
 			adolf.incrementGrade();
 			std::cout << adolf << std::endl;
 		}
-		catch (std::exception& e) {
+		catch (std::exception& e)
+		{
 			std::cerr << e.what() << std::endl;
 		}
 	}
-	return EXIT_SUCCESS;
 	return (0);
 }
