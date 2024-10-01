@@ -8,28 +8,28 @@ FragTrap::FragTrap(void): ClapTrap("Default ClapTrap")
 	std::cout << "FragTrap " << this->_name << " created." << std::endl;
 }
 
-FragTrap::FragTrap(std::string const &name)
+FragTrap::FragTrap(const std::string& name)
 {
 	this->_name = name;
 	this->_hitPoint = 100;
-	this->_energy = 50;
-	this->_damage = 20;
+	this->_energy = 100;
+	this->_damage = 30;
 	std::cout << "FragTrap " << this->_name << " created." << std::endl;
 }
 
-FragTrap::FragTrap(FragTrap const &copy): ClapTrap(copy)
+FragTrap::FragTrap(const FragTrap& copy): ClapTrap(copy)
 {
 	std::cout << "FragTrap " << this->_name << " copied." << std::endl;
 }
 
-FragTrap	&FragTrap::operator=(FragTrap const &copy)
+FragTrap&	FragTrap::operator=(const FragTrap& other)
 {
 	std::cout << "Copy assignment operator for FragTrap called." << std::endl;
-	ClapTrap::operator=(copy);
+	ClapTrap::operator=(other);
 	return (*this);
 }
 
-FragTrap::~FragTrap(void)
+FragTrap::~FragTrap()
 {
 	std::cout << "FragTrap " << this->_name << " destroyed." << std::endl;
 }

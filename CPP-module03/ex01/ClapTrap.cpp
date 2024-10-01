@@ -5,31 +5,31 @@ ClapTrap::ClapTrap(void): _name("Default"), _hitPoint(10), _energy(10), _damage(
 	std::cout << "ClapTrap " << this->_name << " created." << std::endl;
 }
 
-ClapTrap::ClapTrap(std::string const &name): _name(name), _hitPoint(10), _energy(10), _damage(0)
+ClapTrap::ClapTrap(const std::string& name): _name(name), _hitPoint(10), _energy(10), _damage(0)
 {
 	std::cout << "ClapTrap " << this->_name << " created." << std::endl;
 }
 
-ClapTrap::~ClapTrap(void)
+ClapTrap::~ClapTrap()
 {
 	std::cout << "ClapTrap " << this->_name << " destroyed." << std::endl;
 }
 
-ClapTrap::ClapTrap(ClapTrap const &copy)
+ClapTrap::ClapTrap(const ClapTrap& copy)
 {
 	*this = copy;
 	std::cout << "ClapTrap " << this->_name << " copied." << std::endl;
 }
 
-ClapTrap	&ClapTrap::operator=(ClapTrap const &copy)
+ClapTrap&	ClapTrap::operator=(const ClapTrap& other)
 {
 	std::cout << "Copy assignment operator for ClapTrap called." << std::endl;
-	if (this != &copy)
+	if (this != &other)
 	{
-		this->_name = copy._name;
-		this->_hitPoint = copy._hitPoint;
-		this->_energy = copy._energy;
-		this->_damage = copy._damage;
+		this->_name = other._name;
+		this->_hitPoint = other._hitPoint;
+		this->_energy = other._energy;
+		this->_damage = other._damage;
 	}
 	return (*this);
 }

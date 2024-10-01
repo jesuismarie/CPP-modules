@@ -9,7 +9,7 @@ DiamondTrap::DiamondTrap(void)
 	std::cout << "DiamondTrap " << this->_name << " created." << std::endl;
 }
 
-DiamondTrap::DiamondTrap(std::string const &name): ClapTrap(name + "_clap_name")
+DiamondTrap::DiamondTrap(const std::string& name): ClapTrap(name + "_clap_name")
 {
 	this->_name = name;
 	this->_hitPoint = FragTrap::_hitPoint;
@@ -18,26 +18,26 @@ DiamondTrap::DiamondTrap(std::string const &name): ClapTrap(name + "_clap_name")
 	std::cout << "DiamondTrap " << this->_name << " created." << std::endl;
 }
 
-DiamondTrap::DiamondTrap(DiamondTrap const &copy): ClapTrap(copy), FragTrap(copy), ScavTrap(copy)
+DiamondTrap::DiamondTrap(const DiamondTrap& copy): ClapTrap(copy), FragTrap(copy), ScavTrap(copy)
 {
 	this->_name = copy._name;
 	std::cout << "DiamondTrap " << this->_name << " copied." << std::endl;
 }
 
-DiamondTrap	&DiamondTrap::operator=(DiamondTrap const &copy)
+DiamondTrap&	DiamondTrap::operator=(const DiamondTrap& other)
 {
 	std::cout << "Copy assignment operator for DiamondTrap called." << std::endl;
-	if (this != &copy)
+	if (this != &other)
 	{
-		this->_name = copy._name;
-		this->_hitPoint = copy._hitPoint;
-		this->_energy = copy._energy;
-		this->_damage = copy._damage;
+		this->_name = other._name;
+		this->_hitPoint = other._hitPoint;
+		this->_energy = other._energy;
+		this->_damage = other._damage;
 	}
 	return (*this);
 }
 
-DiamondTrap::~DiamondTrap(void)
+DiamondTrap::~DiamondTrap()
 {
 	std::cout << "DiamondTrap " << this->_name << " destroyed." << std::endl;
 }
@@ -53,7 +53,7 @@ void	DiamondTrap::whoAmI(void)
 	}
 }
 
-void	DiamondTrap::attack(std::string const &target)
+void	DiamondTrap::attack(const std::string& target)
 {
 	ScavTrap::attack(target);
 }

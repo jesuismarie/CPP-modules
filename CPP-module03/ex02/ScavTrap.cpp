@@ -8,7 +8,7 @@ ScavTrap::ScavTrap(void): ClapTrap("Default ClapTrap")
 	std::cout << "ScavTrap " << this->_name << " created." << std::endl;
 }
 
-ScavTrap::ScavTrap(std::string const &name)
+ScavTrap::ScavTrap(const std::string& name)
 {
 	this->_name = name;
 	this->_hitPoint = 100;
@@ -17,20 +17,20 @@ ScavTrap::ScavTrap(std::string const &name)
 	std::cout << "ScavTrap " << this->_name << " created." << std::endl;
 }
 
-ScavTrap::ScavTrap(ScavTrap const &copy): ClapTrap(copy)
+ScavTrap::ScavTrap(const ScavTrap& copy): ClapTrap(copy)
 {
 	std::cout << "ScavTrap " << this->_name << " copied." << std::endl;
 }
 
-ScavTrap::~ScavTrap(void)
+ScavTrap::~ScavTrap()
 {
 	std::cout << "ScavTrap " << this->_name << " destroyed." << std::endl;
 }
 
-ScavTrap	&ScavTrap::operator=(ScavTrap const &copy)
+ScavTrap&	ScavTrap::operator=(const ScavTrap& other)
 {
 	std::cout << "Copy assignment operator for ScavTrap called." << std::endl;
-	ClapTrap::operator=(copy);
+	ClapTrap::operator=(other);
 	return (*this);
 }
 
