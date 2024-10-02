@@ -10,26 +10,26 @@ WrongAnimal::WrongAnimal(std::string type): _type(type)
 	std::cout << "WrongAnimal's default constructor called with type " << this->_type << std::endl;
 }
 
-WrongAnimal::~WrongAnimal(void)
+WrongAnimal::~WrongAnimal()
 {
 	std::cout << "WrongAnimal's destructor called with type " << this->_type << std::endl;
 }
 
-WrongAnimal::WrongAnimal(WrongAnimal const &copy)
+WrongAnimal::WrongAnimal(const WrongAnimal& copy)
 {
 	this->_type = copy._type;
 	std::cout << "WrongAnimal's copy constructor called with type " << this->_type << std::endl;
 }
 
-WrongAnimal	&WrongAnimal::operator=(WrongAnimal const &copy)
+WrongAnimal&	WrongAnimal::operator=(const WrongAnimal& other)
 {
-	if (this != &copy)
-		this->_type = copy._type;
+	if (this != &other)
+		this->_type = other._type;
 	std::cout << "WrongAnimal's copy assignment operator called with type " << this->_type << std::endl;
 	return (*this);
 }
 
-const	std::string	&WrongAnimal::getType(void) const
+const	std::string&	WrongAnimal::getType(void) const
 {
 	return (this->_type);
 }

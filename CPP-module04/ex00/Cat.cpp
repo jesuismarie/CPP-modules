@@ -5,21 +5,21 @@ Cat::Cat(void): Animal("Cat")
 	std::cout << "Cat's default constructor called" << std::endl;
 }
 
-Cat::~Cat(void)
+Cat::~Cat()
 {
 	std::cout << "Cat's destructor called" << std::endl;
 }
 
-Cat::Cat(Cat const &copy): Animal(copy)
+Cat::Cat(const Cat& copy): Animal(copy)
 {
 	std::cout << "Cat's copy constructor called" << std::endl;
 }
 
-Cat	&Cat::operator=(Cat const &copy)
+Cat&	Cat::operator=(const Cat& other)
 {
-	std::cout << "Cat's assignment operator called" << std::endl;
-	if (this != &copy)
-		this->_type = copy._type;
+	std::cout << "Cat's copy assignment operator called" << std::endl;
+	if (this != &other)
+		this->_type = other._type;
 	return (*this);
 }
 

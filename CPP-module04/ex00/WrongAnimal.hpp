@@ -10,12 +10,12 @@ class WrongAnimal
 	public:
 		WrongAnimal(void);
 		WrongAnimal(std::string type);
-		WrongAnimal(WrongAnimal const &copy);
-		WrongAnimal	&operator=(WrongAnimal const &copy);
-		virtual		~WrongAnimal(void);
-		const		std::string	&getType(void) const;
-		void		setType(std::string str);
-		void		makeSound(void) const;
+		WrongAnimal(const WrongAnimal& copy);
+		virtual				~WrongAnimal();
+		WrongAnimal&		operator=(const WrongAnimal& other);
+		const std::string&	getType(void) const;
+		void				setType(std::string str);
+		void				makeSound(void) const;
 };
 
 #endif
