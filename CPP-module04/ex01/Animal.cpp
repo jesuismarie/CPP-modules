@@ -10,26 +10,26 @@ Animal::Animal(std::string type): _type(type)
 	std::cout << "Animal's default constructor called with type " << this->_type << std::endl;
 }
 
-Animal::~Animal(void)
+Animal::~Animal()
 {
 	std::cout << "Animal's destructor called with type " << this->_type << std::endl;
 }
 
-Animal::Animal(Animal const &copy)
+Animal::Animal(const Animal& copy)
 {
 	this->_type = copy._type;
 	std::cout << "Animal's copy constructor called with type " << this->_type << std::endl;
 }
 
-Animal	&Animal::operator=(Animal const &copy)
+Animal&	Animal::operator=(const Animal& other)
 {
-	if (this != &copy)
-		this->_type = copy._type;
+	if (this != &other)
+		this->_type = other._type;
 	std::cout << "Animal's copy assignment operator called with type " << this->_type << std::endl;
 	return (*this);
 }
 
-const std::string	&Animal::getType(void) const
+const std::string&	Animal::getType(void) const
 {
 	return (this->_type);
 }

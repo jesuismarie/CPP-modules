@@ -7,13 +7,13 @@
 class Cat : public Animal
 {
 	private:
-		Brain	*brain;
+		Brain*	brain;
 	public:
 		Cat(void);
-		Cat(Cat const &copy);
-		~Cat(void);
-		Cat		&operator=(Cat const &copy);
-		Brain	*getBrain(void) const;
+		Cat(const Cat& copy);
+		~Cat();
+		Cat&	operator=(const Cat& other);
+		Brain*	getBrain(void) const;
 		void	makeSound(void) const;
 };
 
