@@ -6,31 +6,31 @@ Cat::Cat(void): AAnimal("Cat")
 	brain = new Brain();
 }
 
-Cat::~Cat(void)
+Cat::~Cat()
 {
 	std::cout << "Cat's destructor called" << std::endl;
 	delete brain;
 }
 
-Cat::Cat(Cat const &copy): AAnimal(copy)
+Cat::Cat(const Cat& copy): AAnimal(copy)
 {
 	std::cout << "Cat's copy constructor called" << std::endl;
 	brain = new Brain(*copy.brain);
 }
 
-Cat	&Cat::operator=(Cat const &copy)
+Cat&	Cat::operator=(const Cat& other)
 {
-	std::cout << "Cat's assignment operator called" << std::endl;
-	if (this != &copy)
+	std::cout << "Cat's copy assignment operator called" << std::endl;
+	if (this != &other)
 	{
-		this->_type = copy._type;
+		this->_type = other._type;
 		delete brain;
-		brain = new Brain(*copy.brain);
+		brain = new Brain(*other.brain);
 	}
 	return (*this);
 }
 
-Brain	*Cat::getBrain(void) const
+Brain*	Cat::getBrain(void) const
 {
 	return (this->brain);
 }

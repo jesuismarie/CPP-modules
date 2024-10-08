@@ -6,31 +6,31 @@ Dog::Dog(void): AAnimal("Dog")
 	brain = new Brain();
 }
 
-Dog::~Dog(void)
+Dog::~Dog()
 {
 	std::cout << "Dog's destructor called" << std::endl;
 	delete brain;
 }
 
-Dog::Dog(Dog const &copy): AAnimal(copy)
+Dog::Dog(const Dog& copy): AAnimal(copy)
 {
 	std::cout << "Dog's copy constructor called" << std::endl;
 	brain = new Brain(*copy.brain);
 }
 
-Dog	&Dog::operator=(Dog const &copy)
+Dog& Dog::operator=(const Dog& other)
 {
-	std::cout << "Dog's assignment operator called" << std::endl;
-	if (this != &copy)
+	std::cout << "Dog's copy assignment operator called" << std::endl;
+	if (this != &other)
 	{
-		this->_type = copy._type;
+		this->_type = other._type;
 		delete brain;
-		brain = new Brain(*copy.brain);
+		brain = new Brain(*other.brain);
 	}
 	return (*this);
 }
 
-Brain	*Dog::getBrain(void) const
+Brain*	Dog::getBrain(void) const
 {
 	return (this->brain);
 }
