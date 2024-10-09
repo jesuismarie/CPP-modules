@@ -7,19 +7,19 @@ class Character : public ICharacter
 {
 	protected:
 		std::string	_name;
-		AMateria	*_inventory[4];
-		bool		inInventory(AMateria *m);
+		AMateria*	_inventory[4];
+		bool		inInventory(AMateria* m);
 	public:
 		Character(void);
 		Character(std::string const &name);
-		Character(Character const &copy);
-		~Character(void);
-		Character			&operator=(Character const &copy);
-		std::string const	&getName(void) const;
+		Character(const Character& copy);
+		~Character();
+		Character&			operator=(const Character& other);
+		const std::string&	getName(void) const;
 		void				setName(std::string name);
-		void				equip(AMateria *m);
+		void				equip(AMateria* m);
 		void				unequip(int idx);
-		void				use(int idx, ICharacter &target);
+		void				use(int idx, ICharacter& target);
 };
 
 #endif

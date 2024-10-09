@@ -5,12 +5,12 @@ Character::Character(void): _name("Default"), _inventory()
 	std::cout << "Character object created with default constructor!" << std::endl;
 }
 
-Character::Character(std::string const &name): _name(name), _inventory()
+Character::Character(const std::string& name): _name(name), _inventory()
 {
 	std::cout << "Character object " << this->_name << " created!" << std::endl;
 }
 
-Character::Character(Character const &copy)
+Character::Character(const Character& copy)
 {
 	this->_name = copy._name;
 	for (int i = 0; i < 4; i++)
@@ -22,11 +22,11 @@ Character::Character(Character const &copy)
 	std::cout << "Character object copied!" << std::endl;
 }
 
-Character &Character::operator=(const Character &copy)
+Character &Character::operator=(const Character& other)
 {
-	if (this != &copy)
+	if (this != &other)
 	{
-		this->_name = copy._name;
+		this->_name = other._name;
 		for (int i = 0; i < 4; i++)
 		{
 			if (this->_inventory[i])
@@ -37,14 +37,14 @@ Character &Character::operator=(const Character &copy)
 		}
 		for (int i = 0; i < 4; i++)
 		{
-			if (copy._inventory[i])
-				this->_inventory[i] = copy._inventory[i]->clone();
+			if (other._inventory[i])
+				this->_inventory[i] = other._inventory[i]->clone();
 		}
 	}
 	return (*this);
 }
 
-Character::~Character(void)
+Character::~Character()
 {
 	for (int i = 0; i < 4; i++)
 	{
@@ -54,7 +54,7 @@ Character::~Character(void)
 	std::cout << "Character object destroyed!" << std::endl;
 }
 
-std::string const	&Character::getName(void) const
+const std::string&	Character::getName(void) const
 {
 	return (this->_name);
 }
@@ -64,7 +64,7 @@ void	Character::setName(std::string name)
 	this->_name = name;
 }
 
-bool		Character::inInventory(AMateria *m)
+bool		Character::inInventory(AMateria* m)
 {
 	for (int i = 0; i < 4; i++)
 	{
@@ -74,7 +74,7 @@ bool		Character::inInventory(AMateria *m)
 	return (0);
 }
 
-void	Character::equip(AMateria *m)
+void	Character::equip(AMateria* m)
 {
 	if (!m)
 	{
@@ -107,7 +107,7 @@ void	Character::unequip(int idx)
 	}
 }
 
-void	Character::use(int idx, ICharacter &target)
+void	Character::use(int idx, ICharacter& target)
 {
 	if (idx < 0 || idx > 3 || !this->_inventory[idx])
 		std::cout << "Materia doesn't exist" << std::endl;

@@ -12,12 +12,12 @@ class AMateria
 		std::string	_type;
 	public:
 		AMateria(void);
-		AMateria(std::string const &type);
-		AMateria(AMateria const &copy);
-		virtual				~AMateria(void);
-		AMateria			&operator=(AMateria const &copy);
-		std::string const	&getType(void) const;
-		virtual AMateria	*clone(void) const = 0;
+		AMateria(const std::string& type);
+		AMateria(const AMateria& copy);
+		virtual				~AMateria();
+		AMateria&			operator=(const AMateria& other);
+		const std::string&	getType(void) const;
+		virtual AMateria*	clone(void) const = 0;
 		virtual void		use(ICharacter& target);
 };
 

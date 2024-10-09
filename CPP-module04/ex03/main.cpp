@@ -6,16 +6,16 @@
 int	main(void)
 {
 	{
-		IMateriaSource	*src = new MateriaSource();
+		IMateriaSource*	src = new MateriaSource();
 		src->learnMateria(new Ice());
 		src->learnMateria(new Cure());
-		ICharacter	*me = new Character("me");
-		AMateria	*tmp;
+		ICharacter*	me = new Character("me");
+		AMateria*	tmp;
 		tmp = src->createMateria("ice");
 		me->equip(tmp);
 		tmp = src->createMateria("cure");
 		me->equip(tmp);
-		ICharacter	*bob = new Character("bob");
+		ICharacter*	bob = new Character("bob");
 		me->use(0, *bob);
 		me->use(1, *bob);
 		std::cout << std::endl;
@@ -26,26 +26,26 @@ int	main(void)
 	}
 	{
 		std::cout << "1. Create new MateriaSource and learn materias (check maximum too):" << std::endl;
-		IMateriaSource	*src = new MateriaSource();
+		IMateriaSource*	src = new MateriaSource();
 		src->learnMateria(new Ice());
 		src->learnMateria(new Cure());
 		src->learnMateria(new Ice());
 		src->learnMateria(new Cure());
-		AMateria	*mat = new Cure();
+		AMateria*	mat = new Cure();
 		src->learnMateria(mat);
 		delete mat;
 		std::cout << std::endl;
 		
 		std::cout << "2. Create 2 new characters and test deep copy:" << std::endl;
-		Character	*dur0 = new Character("Alice");
-		ICharacter	*dur1 = new Character(*dur0);
+		Character*	dur0 = new Character("Alice");
+		ICharacter*	dur1 = new Character(*dur0);
 		delete dur0;
 		delete dur1;
 		std::cout << std::endl;
 
 		std::cout << "3. Create materias and equip them (also check unknown materias):" << std::endl;
-		AMateria	*tmp;
-		ICharacter	*dur2 = new Character("Alice");
+		AMateria*	tmp;
+		ICharacter*	dur2 = new Character("Alice");
 		tmp = src->createMateria("ice");
 		dur2->equip(tmp);
 		tmp = src->createMateria("cure");
@@ -56,8 +56,8 @@ int	main(void)
 		std::cout << std::endl;
 
 		std::cout << "4. Check maximum equipped too:" << std::endl;
-		AMateria	*cure = new Cure();
-		AMateria	*ice = new Ice();
+		AMateria*	cure = new Cure();
+		AMateria*	ice = new Ice();
 		dur2->equip(cure);
 		dur2->equip(cure);
 		dur2->equip(ice);

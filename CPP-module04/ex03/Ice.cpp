@@ -5,25 +5,25 @@ Ice::Ice(void): AMateria("ice")
 	std::cout << "Ice object created!" << std::endl;
 }
 
-Ice::Ice(Ice const &copy): AMateria(copy)
+Ice::Ice(const Ice& copy): AMateria(copy)
 {
 	std::cout << "Ice object copied!" << std::endl;
 }
 
-Ice	&Ice::operator=(Ice const &copy)
+Ice&	Ice::operator=(const Ice& other)
 {
-	if (this != &copy)
-		this->_type = copy._type;
+	if (this != &other)
+		this->_type = other._type;
 	std::cout << "Ice assignment operator called!" << std::endl;
 	return (*this);
 }
 
-Ice::~Ice(void)
+Ice::~Ice()
 {
 	std::cout << "Ice object destroyed!" << std::endl;
 }
 
-AMateria	*Ice::clone(void) const
+AMateria*	Ice::clone(void) const
 {
 	return (new Ice(*this));
 }

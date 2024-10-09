@@ -4,36 +4,36 @@ AMateria::AMateria(void): _type("Unidentified")
 {
 }
 
-AMateria::AMateria(std::string const &type): _type(type)
+AMateria::AMateria(const std::string& type): _type(type)
 {
 	std::cout << "AMatreia object created!" << std::endl;
 }
 
-AMateria::AMateria(AMateria const &copy)
+AMateria::AMateria(const AMateria& copy)
 {
 	this->_type = copy._type;
 	std::cout << "AMatreia object copied!" << std::endl;
 }
 
-AMateria::~AMateria(void)
+AMateria::~AMateria()
 {
 	std::cout << "AMatreia object destroyed!" << std::endl;
 }
 
-AMateria	&AMateria::operator=(AMateria const &copy)
+AMateria&	AMateria::operator=(const AMateria& other)
 {
-	if (this != &copy)
-		this->_type = copy._type;
-	std::cout << "AMatreia assignment operator called!" << std::endl;
+	if (this != &other)
+		this->_type = other._type;
+	std::cout << "AMatreia copy assignment operator called!" << std::endl;
 	return (*this);
 }
 
-std::string const	&AMateria::getType(void) const
+const std::string&	AMateria::getType(void) const
 {
 	return (this->_type);
 }
 
-void	AMateria::use(ICharacter &target)
+void	AMateria::use(ICharacter& target)
 {
 	std::cout << "* " << target.getName() << " has undefined materia *" << std::endl;
 }

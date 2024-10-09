@@ -5,7 +5,7 @@ MateriaSource::MateriaSource(void): _inventory()
 	std::cout << "MateriaSource object created with default constructor!" << std::endl;
 }
 
-MateriaSource::MateriaSource(MateriaSource const &copy)
+MateriaSource::MateriaSource(const MateriaSource& copy)
 {
 	for (int i = 0; i < 4; i++)
 	{
@@ -15,9 +15,9 @@ MateriaSource::MateriaSource(MateriaSource const &copy)
 	std::cout << "MateriaSource object copied!" << std::endl;
 }
 
-MateriaSource	&MateriaSource::operator=(MateriaSource const &copy)
+MateriaSource&	MateriaSource::operator=(const MateriaSource& other)
 {
-	if (this != &copy)
+	if (this != &other)
 	{
 		for (int i = 0; i < 4; i++)
 		{
@@ -29,14 +29,14 @@ MateriaSource	&MateriaSource::operator=(MateriaSource const &copy)
 		}
 		for (int i = 0; i < 4; i++)
 		{
-			if (copy._inventory[i])
-				this->_inventory[i] = copy._inventory[i];
+			if (other._inventory[i])
+				this->_inventory[i] = other._inventory[i];
 		}
 	}
 	return (*this);
 }
 
-MateriaSource::~MateriaSource(void)
+MateriaSource::~MateriaSource()
 {
 	for (int i = 0; i < 4; i++)
 	{
@@ -46,7 +46,7 @@ MateriaSource::~MateriaSource(void)
 	std::cout << "MateriaSource object destroyed!" << std::endl;
 }
 
-bool	MateriaSource::inLearnInventory(AMateria *m)
+bool	MateriaSource::inLearnInventory(AMateria* m)
 {
 	for (int i = 0; i < 4; i++)
 	{
@@ -56,7 +56,7 @@ bool	MateriaSource::inLearnInventory(AMateria *m)
 	return (0);
 }
 
-void	MateriaSource::learnMateria(AMateria *m)
+void	MateriaSource::learnMateria(AMateria* m)
 {
 	if (!m)
 	{
@@ -77,7 +77,7 @@ void	MateriaSource::learnMateria(AMateria *m)
 	}
 }
 
-AMateria	*MateriaSource::createMateria(std::string const &type)
+AMateria*	MateriaSource::createMateria(const std::string& type)
 {
 	for (int i = 0; i < 4; i++)
 	{

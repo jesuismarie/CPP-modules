@@ -6,15 +6,15 @@
 class MateriaSource : public IMateriaSource
 {
 	protected:
-		AMateria	*_inventory[4];
-		bool		inLearnInventory(AMateria *m);
+		AMateria*	_inventory[4];
+		bool		inLearnInventory(AMateria* m);
 	public:
 		MateriaSource(void);
-		MateriaSource(MateriaSource const &copy);
-		~MateriaSource(void);
-		MateriaSource	&operator=(MateriaSource const &copy);
-		void			learnMateria(AMateria *m);
-		AMateria		*createMateria(std::string const &type);
+		MateriaSource(const MateriaSource& copy);
+		~MateriaSource();
+		MateriaSource&	operator=(const MateriaSource& other);
+		void			learnMateria(AMateria* m);
+		AMateria*		createMateria(const std::string& type);
 };
 
 #endif
