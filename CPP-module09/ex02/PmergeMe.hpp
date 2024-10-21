@@ -71,25 +71,26 @@ template <typename T>
 void	PmergeMe::insertNum(T& seq, T& b)
 {
 	int n = 0;
-	int power = 0;
+	int p = 0;
 	size_t start = 0;
 	size_t end = 0;
 
 	for (size_t i = 0; i < b.size();)
 	{
-		power++;
-		n = pow(2, power) - n;
+		p++;
+		n = (1 << p) - n;
 		start += n;
 		end = start - n;
 		if (start > b.size())
 			start = b.size();
 		for (size_t j = start - 1; j >= end;)
 		{
-			seq.insert(std::upper_bound(seq.begin(), seq.end(), b[j]), b[j]);
-			++i;
+			typename T::iterator	pos = std::upper_bound(seq.begin(), seq.end(), b[j]);
+			seq.insert(pos, b[j]);
+			i++;
 			if (j == 0)
 				break ;
-			--j;
+			j--;
 		}
 	}
 }

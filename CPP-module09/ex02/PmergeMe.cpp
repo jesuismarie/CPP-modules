@@ -55,26 +55,6 @@ void	PmergeMe::printInfo(void)
 		<< " elements with std::deque : " << this->deqSortTime << std::endl;
 }
 
-// if (s_nums.size() < 2)
-// {
-// 	cont.insert(std::upper_bound(cont.begin(), cont.end(), *s_nums.begin()), *s_nums.begin());
-// 	return ;
-// }
-// size_t pow_2 = 2;
-// for (size_t i = 0; i < s_nums.size(); i++)
-// {
-// 	typename T::iterator it;
-// 	size_t n = std::min(pow_2, s_nums.size());
-// 	it = s_nums.begin() + n;
-// 	while (it != s_nums.begin())
-// 	{
-// 		--it;
-// 		cont.insert(std::upper_bound(cont.begin(), cont.end(), *it), *it);
-// 	}
-// 	s_nums.erase(s_nums.begin(), s_nums.begin() + n);
-// 	pow_2 = pow(pow_2, i + 2) - pow_2;
-// }
-
 void	PmergeMe::sort(int argc, char** argv)
 {
 	int	num;

@@ -6,7 +6,7 @@ OBJ				= $(SRC:%.cpp=$(BUILD)/%.o)
 HEADER			= PmergeMe.hpp
 CC				= c++
 RM				= rm -rf
-CPPFLAGS		= -Wall -Wextra -Werror -std=c++98 -g3 -fsanitize=address
+CPPFLAGS		= -Wall -Wextra -Werror -std=c++98
 
 YELLOW			= \033[38;2;255;239;0m
 RESET			= \033[0m
@@ -30,5 +30,9 @@ fclean:			clean
 			@echo "${YELLOW}Everything is cleared ✅${RESET}"
 
 re:			fclean all
+
+test: $(NAME)
+	$(eval ARG = $(shell jot -r 3000 1 5000000))
+	./PmergeMe $(ARG)
 
 .PHONY:		all clean fclean re
