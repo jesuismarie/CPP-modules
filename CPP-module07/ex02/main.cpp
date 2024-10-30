@@ -5,29 +5,30 @@
 #define MAX_VAL 750
 int	main(int, char**)
 {
-	// const Array<int>	arr(5);
-	// for (size_t i = 0; i < arr.size(); ++i)
-	// 	std::cout << arr[i] << " ";
-	// std::cout << std::endl;
-	// Array<int>	copy;
-	// copy = arr;
-	// for (size_t i = 0; i < copy.size(); ++i)
-	// 	std::cout << copy[i] << " ";
-	// std::cout << std::endl << "-----------" << std::endl;
-	// for (size_t i = 0; i < copy.size(); ++i)
-	// 	copy[i] = i;
-	// for (size_t i = 0; i < copy.size(); ++i)
-	// 	std::cout << copy[i] << " ";
-	// std::cout << std::endl;
-	// try
-	// {
-	// 	copy[5] = 10;
-	// }
-	// catch(const std::exception& e)
-	// {
-	// 	std::cerr << e.what() << std::endl;
-	// }
+	std::cout << "----- Array Test 1 -----" << std::endl << std::endl;
+	const Array<int>	arr(5);
+	for (size_t i = 0; i < arr.size(); ++i)
+		std::cout << arr[i] << " ";
+	std::cout << std::endl;
+	Array<int>	copy;
+	copy = arr;
+	for (size_t i = 0; i < copy.size(); ++i)
+		std::cout << copy[i] << " ";
+	for (size_t i = 0; i < copy.size(); ++i)
+		copy[i] = i;
+	for (size_t i = 0; i < copy.size(); ++i)
+		std::cout << copy[i] << " ";
+	std::cout << std::endl;
+	try
+	{
+		copy[5] = 10;
+	}
+	catch(const std::exception& e)
+	{
+		std::cerr << e.what() << std::endl;
+	}
 
+	std::cout << std::endl << "----- Array Test 2 -----" << std::endl << std::endl;
 	Array<int>	numbers(MAX_VAL);
 	int*		mirror = new int[MAX_VAL];
 	srand(time(NULL));
