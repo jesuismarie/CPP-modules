@@ -19,12 +19,13 @@ void	testSubject(void)
 	mstack.push(737);
 	mstack.push(0);
 
-	MutantStack<int>::iterator it = mstack.begin();
-	MutantStack<int>::iterator ite = mstack.end();
+	MutantStack<int>::iterator	it = mstack.begin();
+	MutantStack<int>::iterator	ite = mstack.end();
 
 	++it;
 	--it;
-	while (it != ite) 	{
+	while (it != ite)
+	{
 		std::cout << *it << std::endl;
 		++it;
 	}
@@ -53,7 +54,8 @@ void	testReverseIteration(void)
 	MutantStack<int>::reverse_iterator	rite = mstack.rend();
 	++rit;
 	--rit;
-	while (rit != rite) 	{
+	while (rit != rite)
+	{
 		std::cout << *rit << std::endl;
 		++rit;
 	}
@@ -83,7 +85,8 @@ void	runListIteration(void)
 
 	++it;
 	--it;
-	while (it != ite) 	{
+	while (it != ite)
+	{
 		std::cout << *it << std::endl;
 		++it;
 	}
@@ -113,7 +116,8 @@ void	runListReverseIteration(void)
 
 	++it;
 	--it;
-	while (it != ite) 	{
+	while (it != ite)
+	{
 		std::cout << *it << std::endl;
 		++it;
 	}
@@ -127,7 +131,6 @@ int	main(void)
 	testReverseIteration();
 	runListReverseIteration();
 
-	// Tests are done
 	std::cout << "All tests completed. The two outputs should be identical." << std::endl;
 	return (0);
 }
