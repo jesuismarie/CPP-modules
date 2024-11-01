@@ -7,8 +7,8 @@ int	main(int argc, char** argv)
 		std::cerr << "ERROR: Cannot read the file." << std::endl;
 		return 1;
 	}
-
-	try {
+	try
+	{
 		BitcoinExchange	ob;
 		ob.initDatabase("data.csv");
 		ob.exchangePrintRate(argv[1]);
